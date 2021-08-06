@@ -1,0 +1,39 @@
+@startuml
+User --- DatabaseDeleter
+
+class User{
+-name: String
+-email: String
+-password: String
+-databaseDeleter: DatabaseDeleter
+-User(name: String, email: String, password: String)
+
+login()
+register()
+}
+
+class Admin extends User {
+    Admin(name: String, email: String, password: String)
+    super(name, email, password)
+}
+class Editor extends User {
+    Admin(name: String, email: String, password: String)
+    super(name, email, password)
+}
+class Subscriber extends User {
+    Admin(name: String, email: String, password: String)
+    super(name, email, password)
+}
+
+interface DatabaseDeleter{
+    deleteDatabase() : void
+}
+
+class canDeletedatabase implements DatabaseDeleter {
+    deleteDatabase() : void
+}
+
+class cannotDeleteDatabase implements DatabaseDeleter {
+    deleteDatabase() : void
+}
+@enduml

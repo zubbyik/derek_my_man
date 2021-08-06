@@ -1,0 +1,35 @@
+@startuml
+class Animal {
+    String name;
+    String classification;
+    String locationFound;
+    String animalType;
+    Flys flyType;
+    EatingHabit eatingHabit;
+
+
+    Animal(String name, String classification, String locationFound, String animalType) {}
+
+      public String getName()
+
+      public String getClassification()
+
+      public String getLocationFound()
+      public String getAnimalType()
+
+      public String canIFly(Flys flyType)
+
+      public String canIEatMeat(EatingHabit eatingHabit)
+}
+Animal *-- CanFly
+Animal *-- CantFly
+
+class CanFly {
+    public fly() : String
+}
+
+class CantFly{
+    public fly(): String
+}
+
+@enduml
